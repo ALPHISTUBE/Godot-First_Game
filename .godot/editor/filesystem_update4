@@ -6,3 +6,6 @@ res://Scenes/coin.tscn
 res://Scripts/coin.gd
 res://Scenes/Killzone.tscn
 res://Scripts/Killzone.gd
+res://Scenes/enemy.tscn
+res://Scripts/enemy.gd
+res://Scenes/Slimenemy.tscn
