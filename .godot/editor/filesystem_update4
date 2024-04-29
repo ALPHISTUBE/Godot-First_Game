@@ -9,3 +9,6 @@ res://Scripts/Killzone.gd
 res://Scenes/enemy.tscn
 res://Scripts/enemy.gd
 res://Scenes/Slimenemy.tscn
+res://Scripts/GameManager.gd
+res://Scripts/Camera.gd
+res://default_bus_layout.tres

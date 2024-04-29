@@ -1,43 +1,50 @@
-[gd_scene load_steps=10 format=3 uid="uid://d0js66htc6htt"]
+[gd_scene load_steps=11 format=3 uid="uid://d0js66htc6htt"]
 
 [ext_resource type="Texture2D" uid="uid://camwrlv1j2ogc" path="res://brackeys_platformer_assets/sprites/slime_green.png" id="1_2x832"]
 [ext_resource type="Script" path="res://Scripts/enemy.gd" id="1_lc5wx"]
 [ext_resource type="PackedScene" uid="uid://drlammfy26h0" path="res://Scenes/Killzone.tscn" id="2_jsj3i"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_heccw"]
-atlas = ExtResource("1_2x832")
-region = Rect2(0, 24, 24, 24)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_efrc0"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_jmxbh"]
 atlas = ExtResource("1_2x832")
 region = Rect2(24, 24, 24, 24)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_jn7j2"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_bn547"]
+atlas = ExtResource("1_2x832")
+region = Rect2(24, 48, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2mdee"]
 atlas = ExtResource("1_2x832")
 region = Rect2(48, 24, 24, 24)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_ur7hu"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_6ccat"]
 atlas = ExtResource("1_2x832")
-region = Rect2(72, 24, 24, 24)
+region = Rect2(48, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nt868"]
+atlas = ExtResource("1_2x832")
+region = Rect2(72, 0, 24, 24)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_y2oq4"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_heccw")
+"texture": SubResource("AtlasTexture_jmxbh")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_efrc0")
+"texture": SubResource("AtlasTexture_bn547")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_jn7j2")
+"texture": SubResource("AtlasTexture_2mdee")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_ur7hu")
+"texture": SubResource("AtlasTexture_6ccat")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nt868")
 }],
 "loop": true,
 "name": &"Idle",
-"speed": 7.0
+"speed": 11.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_85irk"]
@@ -51,6 +58,7 @@ position = Vector2(0, -12)
 sprite_frames = SubResource("SpriteFrames_y2oq4")
 animation = &"Idle"
 autoplay = "Idle"
+frame_progress = 0.253296
 
 [node name="Killzone" parent="." instance=ExtResource("2_jsj3i")]
 

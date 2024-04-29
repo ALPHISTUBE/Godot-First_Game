@@ -1,11 +1,15 @@
-[gd_scene load_steps=13 format=3 uid="uid://cs7mfs40ksydy"]
+[gd_scene load_steps=18 format=3 uid="uid://cs7mfs40ksydy"]
 
 [ext_resource type="PackedScene" uid="uid://drlammfy26h0" path="res://Scenes/Killzone.tscn" id="1_22iyd"]
+[ext_resource type="Script" path="res://Scripts/GameManager.gd" id="1_67inq"]
 [ext_resource type="PackedScene" uid="uid://djgphvf8yf6v4" path="res://Scenes/player.tscn" id="1_oo51s"]
 [ext_resource type="Texture2D" uid="uid://6ugg2cjwu683" path="res://brackeys_platformer_assets/sprites/world_tileset.png" id="2_vwdbm"]
 [ext_resource type="PackedScene" uid="uid://clwypeprxy4ou" path="res://Scenes/platform.tscn" id="3_g8cn6"]
+[ext_resource type="Texture2D" uid="uid://do6ne18aceakd" path="res://brackeys_platformer_assets/sprites/fruit.png" id="3_rgxvg"]
+[ext_resource type="Texture2D" uid="uid://c1bbm768yam00" path="res://brackeys_platformer_assets/sprites/coin.png" id="4_481mo"]
 [ext_resource type="PackedScene" uid="uid://sdthmyw41iov" path="res://Scenes/coin.tscn" id="4_ymd2u"]
 [ext_resource type="PackedScene" uid="uid://d0js66htc6htt" path="res://Scenes/Slimenemy.tscn" id="6_n34mb"]
+[ext_resource type="FontFile" uid="uid://cko03ni4wjx0o" path="res://brackeys_platformer_assets/fonts/PixelOperator8-Bold.ttf" id="7_ynlss"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_2khu4"]
 texture = ExtResource("2_vwdbm")
@@ -428,7 +432,155 @@ _data = {
 "RESET": SubResource("Animation_c1n1j")
 }
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4tifx"]
+size = Vector2(73, 45)
+
 [node name="Game" type="Node2D"]
+
+[node name="Win" type="CanvasLayer" parent="."]
+visible = false
+
+[node name="Control" type="Control" parent="Win"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="ColorRect" type="ColorRect" parent="Win/Control"]
+layout_mode = 0
+offset_top = -2.0
+offset_right = 1151.0
+offset_bottom = 647.0
+color = Color(0.290196, 0.290196, 0.290196, 0.643137)
+
+[node name="Sprite2D3" type="Sprite2D" parent="Win/Control/ColorRect"]
+position = Vector2(504.185, 263.64)
+scale = Vector2(6.455, 6.455)
+texture = ExtResource("4_481mo")
+region_enabled = true
+region_rect = Rect2(98, 0, 12, 16)
+
+[node name="Score" type="Label" parent="Win/Control/ColorRect/Sprite2D3"]
+z_index = 20
+offset_left = 6.81642
+offset_top = -3.25329
+offset_right = 86.8164
+offset_bottom = 19.7467
+scale = Vector2(0.32, 0.32)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 6
+theme_override_fonts/font = ExtResource("7_ynlss")
+text = "00000"
+vertical_alignment = 1
+
+[node name="Sprite2D4" type="Sprite2D" parent="Win/Control/ColorRect"]
+position = Vector2(504.185, 367.135)
+scale = Vector2(6.455, 6.455)
+texture = ExtResource("3_rgxvg")
+region_enabled = true
+region_rect = Rect2(1, 50, 14, 14)
+
+[node name="Health" type="Label" parent="Win/Control/ColorRect/Sprite2D4"]
+z_index = 20
+offset_left = 6.81642
+offset_top = -2.40046
+offset_right = 86.8164
+offset_bottom = 20.5995
+scale = Vector2(0.32, 0.32)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 6
+theme_override_fonts/font = ExtResource("7_ynlss")
+text = "00000"
+vertical_alignment = 1
+
+[node name="q" type="Button" parent="Win/Control"]
+layout_mode = 0
+offset_left = 287.0
+offset_top = 446.0
+offset_right = 353.0
+offset_bottom = 470.0
+scale = Vector2(3.09111, 3.09111)
+theme_override_fonts/font = ExtResource("7_ynlss")
+text = "Quit
+"
+
+[node name="r" type="Button" parent="Win/Control"]
+layout_mode = 0
+offset_left = 599.0
+offset_top = 446.0
+offset_right = 715.0
+offset_bottom = 470.0
+scale = Vector2(3.09111, 3.09111)
+theme_override_fonts/font = ExtResource("7_ynlss")
+text = "Restart
+"
+
+[node name="Label" type="Label" parent="Win/Control"]
+layout_mode = 0
+offset_left = 287.0
+offset_top = 101.0
+offset_right = 419.0
+offset_bottom = 124.0
+scale = Vector2(4.87469, 4.87469)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("7_ynlss")
+text = "Nice Trys"
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Control" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer/Control"]
+position = Vector2(50, 52)
+scale = Vector2(6.455, 6.455)
+texture = ExtResource("4_481mo")
+region_enabled = true
+region_rect = Rect2(98, 0, 12, 16)
+
+[node name="Score" type="Label" parent="CanvasLayer/Control/Sprite2D"]
+unique_name_in_owner = true
+z_index = 20
+offset_left = 6.81642
+offset_top = -3.25329
+offset_right = 86.8164
+offset_bottom = 19.7467
+scale = Vector2(0.32, 0.32)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 6
+theme_override_fonts/font = ExtResource("7_ynlss")
+text = "00000"
+vertical_alignment = 1
+
+[node name="Sprite2D2" type="Sprite2D" parent="CanvasLayer/Control"]
+position = Vector2(1093, 49)
+scale = Vector2(6.455, 6.455)
+texture = ExtResource("3_rgxvg")
+region_enabled = true
+region_rect = Rect2(1, 50, 14, 14)
+
+[node name="Health" type="Label" parent="CanvasLayer/Control/Sprite2D2"]
+unique_name_in_owner = true
+z_index = 20
+offset_left = -33.6174
+offset_top = -1.54919
+offset_right = 46.3826
+offset_bottom = 21.4508
+scale = Vector2(0.32, 0.32)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 6
+theme_override_fonts/font = ExtResource("7_ynlss")
+text = "00000"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="GameManager" type="Node" parent="."]
+unique_name_in_owner = true
+script = ExtResource("1_67inq")
 
 [node name="Player" parent="." instance=ExtResource("1_oo51s")]
 position = Vector2(39, 31)
@@ -534,11 +686,87 @@ position = Vector2(-24, -137)
 [node name="Coin12" parent="Coins" instance=ExtResource("4_ymd2u")]
 position = Vector2(454, -103)
 
-[node name="SlimeEnemy" parent="." instance=ExtResource("6_n34mb")]
+[node name="Enemys" type="Node" parent="."]
+
+[node name="SlimeEnemy" parent="Enemys" instance=ExtResource("6_n34mb")]
 position = Vector2(152, -112)
 
-[node name="SlimeEnemey" parent="." instance=ExtResource("6_n34mb")]
+[node name="SlimeEnemey" parent="Enemys" instance=ExtResource("6_n34mb")]
 position = Vector2(425, -96)
 
-[node name="SlimeEnemey2" parent="." instance=ExtResource("6_n34mb")]
+[node name="SlimeEnemey2" parent="Enemys" instance=ExtResource("6_n34mb")]
 position = Vector2(-56, 64)
+
+[node name="Label" type="Label" parent="."]
+offset_left = 61.0
+offset_top = 24.0
+offset_right = 141.0
+offset_bottom = 78.0
+scale = Vector2(0.439698, 0.439698)
+theme_override_fonts/font = ExtResource("7_ynlss")
+text = "SPACE
+to
+jump"
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="."]
+offset_left = -38.0
+offset_top = -7.0
+offset_right = 204.0
+offset_bottom = 47.0
+scale = Vector2(0.439698, 0.439698)
+theme_override_fonts/font = ExtResource("7_ynlss")
+text = "A, < to move Left
+D, > to move Right"
+
+[node name="Label3" type="Label" parent="."]
+offset_left = 297.0
+offset_top = 32.0
+offset_right = 539.0
+offset_bottom = 86.0
+scale = Vector2(0.439698, 0.439698)
+theme_override_colors/font_color = Color(0.280755, 0.509052, 0.960289, 1)
+theme_override_fonts/font = ExtResource("7_ynlss")
+text = "Falling Hurts .."
+
+[node name="Label6" type="Label" parent="."]
+offset_left = 150.0
+offset_top = 46.0
+offset_right = 338.0
+offset_bottom = 81.0
+scale = Vector2(0.374748, 0.374748)
+theme_override_colors/font_color = Color(0.280755, 0.509052, 0.960289, 1)
+theme_override_fonts/font = ExtResource("7_ynlss")
+text = "Water is deep"
+
+[node name="Label4" type="Label" parent="."]
+offset_left = 292.0
+offset_top = -96.0
+offset_right = 534.0
+offset_bottom = -42.0
+scale = Vector2(0.279698, 0.279698)
+theme_override_colors/font_color = Color(0.51351, 0.799106, 0.995444, 1)
+theme_override_fonts/font = ExtResource("7_ynlss")
+text = "Keep Going"
+
+[node name="Label5" type="Label" parent="."]
+offset_left = -5.0
+offset_top = -105.0
+offset_right = 237.0
+offset_bottom = -51.0
+scale = Vector2(0.394122, 0.394122)
+theme_override_colors/font_color = Color(0.51351, 0.799106, 0.995444, 1)
+theme_override_fonts/font = ExtResource("7_ynlss")
+text = "Almost There"
+
+[node name="Flag" type="Area2D" parent="."]
+position = Vector2(-102, -143)
+collision_mask = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Flag"]
+position = Vector2(-2.5, -8.5)
+shape = SubResource("RectangleShape2D_4tifx")
+
+[connection signal="button_down" from="Win/Control/q" to="GameManager" method="_on_q_button_down"]
+[connection signal="button_down" from="Win/Control/r" to="GameManager" method="_on_r_button_down"]
+[connection signal="body_entered" from="Flag" to="GameManager" method="_on_flag_body_entered"]

@@ -1,6 +1,11 @@
 extends CharacterBody2D
 @onready var animated_sprite = $AnimatedSprite2D
 @onready var timer = $Timer
+@onready var hurtS = $Hurt
+@onready var deadS = $Dead
+@onready var animation_player = $AnimationPlayer
+@onready var game_manager = %GameManager
+@onready var win = $"../Win"
 
 const SPEED = 130.0
 const JUMP_VELOCITY = -300.0
@@ -8,24 +13,27 @@ const JUMP_VELOCITY = -300.0
 var dead = false
 var hurt = false
 var health = 2
+var score = 0
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
 func _playerIsDead():
+	deadS.playing = true
 	dead = true
+	win.visible = true
 	$CollisionShape2D.queue_free()
 	animated_sprite.play("Dying")
 	
 func _playerIsHurt():
+	hurtS.playing = true
 	health -= 1
 	hurt = true
 	animated_sprite.play("Hurt")
 	timer.start()
 
-
-func _physics_process(delta):
-	
+func _physics_process(delta):	
+	game_manager.updateT(score, health)
 	var dir = 0
 	
 	if hurt:
@@ -45,6 +53,7 @@ func _physics_process(delta):
 	# Handle jump.
 	if Input.is_action_just_pressed("jump") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
+		animation_player.play("Jump")
 
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.	
@@ -78,4 +87,5 @@ func _physics_process(delta):
 	move_and_slide()
 
 func _on_timer_timeout():
+	hurtS.playing = false
 	hurt = false
