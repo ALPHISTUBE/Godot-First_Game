@@ -1,3 +1,6 @@
 res://Scenes/game.tscn
 res://Scenes/player.tscn
 res://Scripts/player.gd
+res://Scenes/platform.tscn
+res://Scenes/coin.tscn
+res://Scripts/coin.gd
