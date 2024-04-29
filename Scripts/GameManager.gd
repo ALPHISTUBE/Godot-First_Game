@@ -13,9 +13,9 @@ var score = 0
 func addPoint(value):
 	score += value
 	score_label.text = str(score)
+	score2.text = str(score)
 
 func updateT(_score, _health):
-	score2.text = str(_score)
 	health.text = str(_health)
 	healthT.text = str(_health)
 
