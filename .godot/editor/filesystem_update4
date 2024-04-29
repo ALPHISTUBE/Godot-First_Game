@@ -4,3 +4,5 @@ res://Scripts/player.gd
 res://Scenes/platform.tscn
 res://Scenes/coin.tscn
 res://Scripts/coin.gd
+res://Scenes/Killzone.tscn
+res://Scripts/Killzone.gd
