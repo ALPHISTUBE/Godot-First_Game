@@ -1,14 +1,9 @@
 res://Scenes/game.tscn
-res://Scenes/player.tscn
 res://Scripts/player.gd
+res://Scripts/GameManager.gd
+res://Scenes/mobile_control.tscn
+res://Scenes/player.tscn
 res://Scenes/platform.tscn
 res://Scenes/coin.tscn
-res://Scripts/coin.gd
 res://Scenes/Killzone.tscn
-res://Scripts/Killzone.gd
-res://Scenes/enemy.tscn
-res://Scripts/enemy.gd
 res://Scenes/Slimenemy.tscn
-res://Scripts/GameManager.gd
-res://Scripts/Camera.gd
-res://default_bus_layout.tres

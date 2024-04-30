@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://cs7mfs40ksydy"]
+[gd_scene load_steps=19 format=3 uid="uid://cs7mfs40ksydy"]
 
 [ext_resource type="PackedScene" uid="uid://drlammfy26h0" path="res://Scenes/Killzone.tscn" id="1_22iyd"]
 [ext_resource type="Script" path="res://Scripts/GameManager.gd" id="1_67inq"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://6ugg2cjwu683" path="res://brackeys_platformer_assets/sprites/world_tileset.png" id="2_vwdbm"]
 [ext_resource type="PackedScene" uid="uid://clwypeprxy4ou" path="res://Scenes/platform.tscn" id="3_g8cn6"]
 [ext_resource type="Texture2D" uid="uid://do6ne18aceakd" path="res://brackeys_platformer_assets/sprites/fruit.png" id="3_rgxvg"]
+[ext_resource type="PackedScene" uid="uid://bl4pg7cfhgu4r" path="res://Scenes/mobile_control.tscn" id="4_4kkt1"]
 [ext_resource type="Texture2D" uid="uid://c1bbm768yam00" path="res://brackeys_platformer_assets/sprites/coin.png" id="4_481mo"]
 [ext_resource type="PackedScene" uid="uid://sdthmyw41iov" path="res://Scenes/coin.tscn" id="4_ymd2u"]
 [ext_resource type="PackedScene" uid="uid://d0js66htc6htt" path="res://Scenes/Slimenemy.tscn" id="6_n34mb"]
@@ -577,6 +578,8 @@ theme_override_fonts/font = ExtResource("7_ynlss")
 text = "00000"
 horizontal_alignment = 2
 vertical_alignment = 1
+
+[node name="Mobile Control" parent="." instance=ExtResource("4_4kkt1")]
 
 [node name="GameManager" type="Node" parent="."]
 unique_name_in_owner = true

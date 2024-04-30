@@ -23,6 +23,7 @@ func _playerIsDead():
 	dead = true
 	win.visible = true
 	$CollisionShape2D.queue_free()
+	game_manager._onPlayerDead()
 	animated_sprite.play("Dying")
 	
 func _playerIsHurt():

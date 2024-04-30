@@ -9,6 +9,7 @@ var score = 0
 @onready var win = $"../Win"
 @onready var q = $"../Win/Control/q"
 @onready var r = $"../Win/Control/r"
+@onready var mobile_control = $"../Mobile Control"
 
 func addPoint(value):
 	score += value
@@ -21,12 +22,14 @@ func updateT(_score, _health):
 
 func _on_flag_body_entered(body):
 	win.visible = true
-
+	_onPlayerDead()
 
 func _on_r_button_down():
 	Engine.time_scale = 1
 	get_tree().reload_current_scene()
 
-
 func _on_q_button_down():
 	get_tree().quit()
+	
+func _onPlayerDead():
+	mobile_control.visible = false

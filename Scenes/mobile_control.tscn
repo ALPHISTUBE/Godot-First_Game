@@ -1,0 +1,34 @@
+[gd_scene load_steps=5 format=3 uid="uid://bl4pg7cfhgu4r"]
+
+[ext_resource type="Texture2D" uid="uid://dxv33qab484ft" path="res://brackeys_platformer_assets/UI/arrow-button.png" id="1_wjpa0"]
+[ext_resource type="Texture2D" uid="uid://cgvya6f2khp05" path="res://brackeys_platformer_assets/UI/Jump.png" id="2_mkixe"]
+[ext_resource type="Texture2D" uid="uid://isalsc321qkk" path="res://brackeys_platformer_assets/UI/arrow-button-clicked.png" id="2_sb0w6"]
+[ext_resource type="Texture2D" uid="uid://dpdmmr5a1smx5" path="res://brackeys_platformer_assets/UI/Jump-Click.png" id="4_fwp8t"]
+
+[node name="Mobile Control" type="CanvasLayer"]
+
+[node name="Left" type="TouchScreenButton" parent="."]
+modulate = Color(1, 1, 1, 0.643137)
+position = Vector2(70, 429)
+scale = Vector2(0.3, 0.3)
+texture_normal = ExtResource("1_wjpa0")
+texture_pressed = ExtResource("2_sb0w6")
+action = "move_left"
+
+[node name="Right" type="TouchScreenButton" parent="."]
+modulate = Color(1, 1, 1, 0.643137)
+z_index = 100
+position = Vector2(437, 583)
+rotation = 3.14159
+scale = Vector2(0.3, 0.3)
+texture_normal = ExtResource("1_wjpa0")
+texture_pressed = ExtResource("2_sb0w6")
+action = "move_right"
+
+[node name="Jump" type="TouchScreenButton" parent="."]
+modulate = Color(1, 1, 1, 0.643137)
+position = Vector2(917, 426)
+scale = Vector2(0.3, 0.3)
+texture_normal = ExtResource("2_mkixe")
+texture_pressed = ExtResource("4_fwp8t")
+action = "jump"
