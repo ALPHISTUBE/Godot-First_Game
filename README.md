@@ -17,4 +17,4 @@ The Game can be expendable.
 
 # Download Links
 💻Desktop Build : [Download Now](https://drive.google.com/file/d/1fS4ChXkrM-aIP_NFKQgHJ8ed_4gbfcyO/view?usp=sharing)
-📱Mobile Build: Comming Soon
+📱Mobile Build: [Download Now](https://drive.google.com/file/d/1QlkWNgJgYhHsHXdjLkpvVhQY7OR8RFef/view?usp=drive_link)
