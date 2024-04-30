@@ -441,47 +441,90 @@ size = Vector2(73, 45)
 [node name="Win" type="CanvasLayer" parent="."]
 visible = false
 
-[node name="Control" type="Control" parent="Win"]
-layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
-
-[node name="ColorRect" type="ColorRect" parent="Win/Control"]
-layout_mode = 0
-offset_top = -2.0
-offset_right = 1151.0
-offset_bottom = 647.0
+[node name="ColorRect" type="ColorRect" parent="Win"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -2834.0
+offset_top = -1484.0
+offset_right = 1166.0
+offset_bottom = 516.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.48, 1.48)
 color = Color(0.290196, 0.290196, 0.290196, 0.643137)
 
-[node name="Sprite2D3" type="Sprite2D" parent="Win/Control/ColorRect"]
-position = Vector2(504.185, 263.64)
-scale = Vector2(6.455, 6.455)
-texture = ExtResource("4_481mo")
-region_enabled = true
-region_rect = Rect2(98, 0, 12, 16)
-
-[node name="Score" type="Label" parent="Win/Control/ColorRect/Sprite2D3"]
-z_index = 20
-offset_left = 6.81642
-offset_top = -3.25329
-offset_right = 86.8164
-offset_bottom = 19.7467
-scale = Vector2(0.32, 0.32)
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = 6
+[node name="q" type="Button" parent="Win"]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 364.0
+offset_top = -204.0
+offset_right = 430.0
+offset_bottom = -164.0
+grow_vertical = 0
+scale = Vector2(2.11, 2.11)
 theme_override_fonts/font = ExtResource("7_ynlss")
-text = "00000"
+text = "Quit
+"
+
+[node name="r" type="Button" parent="Win"]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -550.0
+offset_top = -203.0
+offset_right = -434.0
+offset_bottom = -163.0
+grow_horizontal = 0
+grow_vertical = 0
+scale = Vector2(2.11, 2.11)
+theme_override_fonts/font = ExtResource("7_ynlss")
+text = "Restart
+"
+
+[node name="Label" type="Label" parent="Win"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -334.5
+offset_top = 117.0
+offset_right = 334.5
+offset_bottom = 199.0
+grow_horizontal = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("7_ynlss")
+theme_override_font_sizes/font_size = 81
+text = "Nice Trys"
+horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Sprite2D4" type="Sprite2D" parent="Win/Control/ColorRect"]
-position = Vector2(504.185, 367.135)
+[node name="HBoxContainer" type="HBoxContainer" parent="Win"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Sprite2D4" type="Sprite2D" parent="Win/HBoxContainer"]
+position = Vector2(-51.815, 63.135)
 scale = Vector2(6.455, 6.455)
 texture = ExtResource("3_rgxvg")
 region_enabled = true
 region_rect = Rect2(1, 50, 14, 14)
 
-[node name="Health" type="Label" parent="Win/Control/ColorRect/Sprite2D4"]
+[node name="Health" type="Label" parent="Win/HBoxContainer/Sprite2D4"]
 z_index = 20
 offset_left = 6.81642
 offset_top = -2.40046
@@ -494,56 +537,41 @@ theme_override_fonts/font = ExtResource("7_ynlss")
 text = "00000"
 vertical_alignment = 1
 
-[node name="q" type="Button" parent="Win/Control"]
-layout_mode = 0
-offset_left = 287.0
-offset_top = 446.0
-offset_right = 353.0
-offset_bottom = 470.0
-scale = Vector2(3.09111, 3.09111)
-theme_override_fonts/font = ExtResource("7_ynlss")
-text = "Quit
-"
+[node name="Sprite2D3" type="Sprite2D" parent="Win/HBoxContainer"]
+position = Vector2(-51.815, -40.36)
+scale = Vector2(6.455, 6.455)
+texture = ExtResource("4_481mo")
+region_enabled = true
+region_rect = Rect2(98, 0, 12, 16)
 
-[node name="r" type="Button" parent="Win/Control"]
-layout_mode = 0
-offset_left = 599.0
-offset_top = 446.0
-offset_right = 715.0
-offset_bottom = 470.0
-scale = Vector2(3.09111, 3.09111)
-theme_override_fonts/font = ExtResource("7_ynlss")
-text = "Restart
-"
-
-[node name="Label" type="Label" parent="Win/Control"]
-layout_mode = 0
-offset_left = 287.0
-offset_top = 101.0
-offset_right = 419.0
-offset_bottom = 124.0
-scale = Vector2(4.87469, 4.87469)
+[node name="Score" type="Label" parent="Win/HBoxContainer/Sprite2D3"]
+z_index = 20
+offset_left = 6.81642
+offset_top = -3.25329
+offset_right = 86.8164
+offset_bottom = 19.7467
+scale = Vector2(0.32, 0.32)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = 10
+theme_override_constants/outline_size = 6
 theme_override_fonts/font = ExtResource("7_ynlss")
-text = "Nice Trys"
+text = "00000"
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
-[node name="Control" type="Control" parent="CanvasLayer"]
-layout_mode = 3
-anchors_preset = 0
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer"]
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer/Control"]
+[node name="Coin" type="Sprite2D" parent="CanvasLayer/HBoxContainer"]
 position = Vector2(50, 52)
 scale = Vector2(6.455, 6.455)
 texture = ExtResource("4_481mo")
 region_enabled = true
 region_rect = Rect2(98, 0, 12, 16)
 
-[node name="Score" type="Label" parent="CanvasLayer/Control/Sprite2D"]
+[node name="Score" type="Label" parent="CanvasLayer/HBoxContainer/Coin"]
 unique_name_in_owner = true
 z_index = 20
 offset_left = 6.81642
@@ -557,14 +585,22 @@ theme_override_fonts/font = ExtResource("7_ynlss")
 text = "00000"
 vertical_alignment = 1
 
-[node name="Sprite2D2" type="Sprite2D" parent="CanvasLayer/Control"]
-position = Vector2(1093, 49)
+[node name="HBoxContainer2" type="HBoxContainer" parent="CanvasLayer"]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -40.0
+offset_bottom = 40.0
+grow_horizontal = 0
+
+[node name="Life" type="Sprite2D" parent="CanvasLayer/HBoxContainer2"]
+position = Vector2(-19, 49)
 scale = Vector2(6.455, 6.455)
 texture = ExtResource("3_rgxvg")
 region_enabled = true
 region_rect = Rect2(1, 50, 14, 14)
 
-[node name="Health" type="Label" parent="CanvasLayer/Control/Sprite2D2"]
+[node name="Health" type="Label" parent="CanvasLayer/HBoxContainer2/Life"]
 unique_name_in_owner = true
 z_index = 20
 offset_left = -33.6174
@@ -770,6 +806,6 @@ collision_mask = 3
 position = Vector2(-2.5, -8.5)
 shape = SubResource("RectangleShape2D_4tifx")
 
-[connection signal="button_down" from="Win/Control/q" to="GameManager" method="_on_q_button_down"]
-[connection signal="button_down" from="Win/Control/r" to="GameManager" method="_on_r_button_down"]
+[connection signal="button_down" from="Win/q" to="GameManager" method="_on_q_button_down"]
+[connection signal="button_down" from="Win/r" to="GameManager" method="_on_r_button_down"]
 [connection signal="body_entered" from="Flag" to="GameManager" method="_on_flag_body_entered"]

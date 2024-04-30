@@ -1,9 +1,9 @@
-res://Scenes/coin.tscn::d600ed719554a8fdb08ce3448972646a::1714500747::res://.godot/exported/133200997/export-cfd538a465b9799b811984d89e43d2b9-coin.scn
-res://Scenes/game.tscn::a5a830e00196dfff1ced9b3cc07685a9::1714501980::res://.godot/exported/133200997/export-d45e16ca8d170891778b9dcfa9c69e68-game.scn
-res://Scenes/Killzone.tscn::94131291094cd43bbbd722d71b4c1c74::1714500747::res://.godot/exported/133200997/export-c55422da0d4135e8b2700a6b16828bb8-Killzone.scn
+res://Scenes/coin.tscn::d600ed719554a8fdb08ce3448972646a::1714512286::res://.godot/exported/133200997/export-cfd538a465b9799b811984d89e43d2b9-coin.scn
+res://Scenes/game.tscn::8c9e552199fbaa26c255b31d08aeaeed::1714512317::res://.godot/exported/133200997/export-d45e16ca8d170891778b9dcfa9c69e68-game.scn
+res://Scenes/Killzone.tscn::94131291094cd43bbbd722d71b4c1c74::1714512286::res://.godot/exported/133200997/export-c55422da0d4135e8b2700a6b16828bb8-Killzone.scn
 res://Scenes/music.tscn::ba7e058da97403c7a36ee7bf7573648e::1714420793::res://.godot/exported/133200997/export-8a0c1623dae146fc4e600156cf1e3850-music.scn
-res://Scenes/platform.tscn::3e29692bbe5a4de8dd3be8a23c5e12b9::1714500747::res://.godot/exported/133200997/export-1c750248b0c8da796cecd1f6aa3f1f6d-platform.scn
-res://Scenes/player.tscn::8bb72f2ca8802f52a8df518b0c8e4a90::1714500747::res://.godot/exported/133200997/export-1753c997600d68ab5d20ae99fddb15c6-player.scn
-res://Scenes/Slimenemy.tscn::262adb341a438539d658d094b3ae41f2::1714500747::res://.godot/exported/133200997/export-09bbfb6951959297bc07afddbe90f3bb-Slimenemy.scn
+res://Scenes/platform.tscn::3e29692bbe5a4de8dd3be8a23c5e12b9::1714512286::res://.godot/exported/133200997/export-1c750248b0c8da796cecd1f6aa3f1f6d-platform.scn
+res://Scenes/player.tscn::8bb72f2ca8802f52a8df518b0c8e4a90::1714512286::res://.godot/exported/133200997/export-1753c997600d68ab5d20ae99fddb15c6-player.scn
+res://Scenes/Slimenemy.tscn::262adb341a438539d658d094b3ae41f2::1714512286::res://.godot/exported/133200997/export-09bbfb6951959297bc07afddbe90f3bb-Slimenemy.scn
 res://default_bus_layout.tres::c7d7f0e61090477903c10f602fbf8c28::1714420756::res://.godot/exported/133200997/export-19246414aa9fb561ced4b8dce477acec-default_bus_layout.res
-res://Scenes/mobile_control.tscn::b06c0057354c5db861a90e2cb84da419::1714500747::res://.godot/exported/133200997/export-96c144f3e9fe4bea6ed7814ca8c98467-mobile_control.scn
+res://Scenes/mobile_control.tscn::34e537a308bb295c65335d88db606a3d::1714512286::res://.godot/exported/133200997/export-96c144f3e9fe4bea6ed7814ca8c98467-mobile_control.scn

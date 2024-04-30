@@ -2,8 +2,8 @@ extends Node
 
 var score = 0
 @onready var score_label = %Score
-@onready var score2 = $"../Win/Control/ColorRect/Sprite2D3/Score"
-@onready var health = $"../Win/Control/ColorRect/Sprite2D4/Health"
+@onready var score2 = $"../Win/HBoxContainer/Sprite2D3/Score"
+@onready var health = $"../Win/HBoxContainer/Sprite2D4/Health"
 @onready var healthT = %Health
 @onready var flag = $"../Flag"
 @onready var win = $"../Win"

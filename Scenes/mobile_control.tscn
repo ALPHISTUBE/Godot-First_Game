@@ -7,27 +7,46 @@
 
 [node name="Mobile Control" type="CanvasLayer"]
 
-[node name="Left" type="TouchScreenButton" parent="."]
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -40.0
+offset_right = 40.0
+grow_vertical = 0
+
+[node name="Left" type="TouchScreenButton" parent="HBoxContainer"]
 modulate = Color(1, 1, 1, 0.643137)
-position = Vector2(70, 429)
+position = Vector2(70, -179)
 scale = Vector2(0.3, 0.3)
 texture_normal = ExtResource("1_wjpa0")
 texture_pressed = ExtResource("2_sb0w6")
 action = "move_left"
 
-[node name="Right" type="TouchScreenButton" parent="."]
+[node name="Right" type="TouchScreenButton" parent="HBoxContainer"]
 modulate = Color(1, 1, 1, 0.643137)
 z_index = 100
-position = Vector2(437, 583)
-rotation = 3.14159
+position = Vector2(437, -24.9999)
+rotation = -3.14159
 scale = Vector2(0.3, 0.3)
 texture_normal = ExtResource("1_wjpa0")
 texture_pressed = ExtResource("2_sb0w6")
 action = "move_right"
 
-[node name="Jump" type="TouchScreenButton" parent="."]
+[node name="HBoxContainer2" type="HBoxContainer" parent="."]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -40.0
+offset_top = -40.0
+grow_horizontal = 0
+grow_vertical = 0
+
+[node name="Jump" type="TouchScreenButton" parent="HBoxContainer2"]
 modulate = Color(1, 1, 1, 0.643137)
-position = Vector2(917, 426)
+position = Vector2(-178, -180)
 scale = Vector2(0.3, 0.3)
 texture_normal = ExtResource("2_mkixe")
 texture_pressed = ExtResource("4_fwp8t")
